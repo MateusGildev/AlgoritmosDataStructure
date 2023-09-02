@@ -7,13 +7,15 @@ public class BubbleSort {
         int aux = 0;
         int cont = 0;
 
-        for (int c = 0; c<vetor.length; c++){ //CRIA E ARMAZENA UM ARRAY ALEATORIO
+        for (int c = 0; c < vetor.length; c++) { //CRIA E ARMAZENA UM ARRAY ALEATORIO
             vetor[c] = random.nextInt(100);
         }
-
+        System.out.println("-------BUBBLE SORT---------");
         System.out.println("Vetor NÃO ordenado: ");
         formatAndPrintArray(vetor);
         System.out.println("----------------------------------");
+
+        long startTime = System.currentTimeMillis();
 
         for (cont = 0; cont < vetor.length; cont++) {
             for (int posicao = 0; posicao < vetor.length - 1; posicao++) {
@@ -24,8 +26,11 @@ public class BubbleSort {
                 }
             }
         }
+        long endTime = System.currentTimeMillis();
         System.out.println("Vetor organizado:");
         formatAndPrintArray(vetor);
+        long executionTime = endTime - startTime;
+        System.out.println("TEMPO DE EXECUÇÃO: "+ executionTime+ " ms");
     }
 
     public static void formatAndPrintArray(int[] array) { //FORMATÇÃO DO ARRAY

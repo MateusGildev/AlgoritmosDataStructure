@@ -4,9 +4,10 @@ public class InsertionSort {
     public static void main(String[] args) {
         Random random = new Random();
 
-        int[] vetor = new int[5];
+        int[] vetor = new int[50000];
         int i, j, eleito, count;
 
+        System.out.println("---------INSERTION SORT--------");
         System.out.println("vetor desordenado:");
         for (count = 0; count < vetor.length; count++) {
             vetor[count] = random.nextInt(100);
@@ -17,7 +18,7 @@ public class InsertionSort {
             }
         }
         System.out.println();
-
+        long startTime = System.currentTimeMillis();
         // Ordenação por inserção
         for (i = 1; i < 5; i++) {
             eleito = vetor[i];
@@ -28,6 +29,7 @@ public class InsertionSort {
             }
             vetor[j + 1] = eleito;
         }
+        long endTime = System.currentTimeMillis();
 
         System.out.println("vetor ordenado:");
         for (i = 0; i < 5; i++) {
@@ -37,6 +39,9 @@ public class InsertionSort {
                 System.out.print(", ");
             }
         }
+        System.out.println();
+        long executionTime = endTime - startTime;
+        System.out.println("TEMPO DE EXECUÇÃO: "+executionTime+" ms");
     }
 }
 
