@@ -60,12 +60,12 @@ public class Main {
 
     public static void main(String[] args) {
         Random random = new Random();
-        int[] vetor = new int[10000 ];
+        int[] vetor = new int[1000];
 
         System.out.println("VETOR NÃO ORDENADO:");
         for (int c = 0; c < vetor.length; c++) {
             vetor[c] = random.nextInt(100000);
-            System.out.println(vetor[c]);
+            //System.out.println(vetor[c]);
         }
 
         long startTime = System.currentTimeMillis(); // Captura o tempo inicial
@@ -73,12 +73,12 @@ public class Main {
         mergeSort(vetor);
 
         long endTime = System.currentTimeMillis(); // Captura o tempo final
-        long elapsedTime = endTime - startTime; // Calcula o tempo decorrido em milissegundos
+        long elapsedTime = (endTime - startTime); // Calcula o tempo decorrido em milissegundos
 
         System.out.println("VETOR ORDENADO:");
-        for (int value : vetor) {
-            System.out.println(value);
-        }
+        //for (int value : vetor) {
+           // System.out.println(value);
+        //}
 
         System.out.println("Tempo decorrido para ordenar o vetor: " + elapsedTime + " milissegundos");
     }
