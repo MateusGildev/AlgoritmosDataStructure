@@ -6,11 +6,11 @@ import java.text.DecimalFormat;
 public class BubbleSort {
     public static void main(String[] args) {
         Random random = new Random();
-        int[] vetor = new int[5];
+        int[] vetor = new int[100000];
         int aux = 0;
 
         for (int c = 0; c < vetor.length; c++) {
-            vetor[c] = random.nextInt(100);
+            vetor[c] = random.nextInt(1000);
         }
         System.out.println("-------BUBBLE SORT---------");
         System.out.println("Vetor NÃO ordenado: ");
@@ -32,12 +32,12 @@ public class BubbleSort {
         System.out.println("Vetor organizado:");
         formatAndPrintArray(vetor);
         long executionTime = endTime - startTime;
-        double executionTimeInSeconds = executionTime / 1000.0; // Converter para segundos
+        double executionTimeInSeconds = executionTime; // Converter para segundos
 
         DecimalFormat df = new DecimalFormat("#0.0"); // Formato com uma casa decimal
         String formattedExecutionTime = df.format(executionTimeInSeconds);
 
-        System.out.println("TEMPO DE EXECUÇÃO: " + formattedExecutionTime + " segundos");
+        System.out.println("TEMPO DE EXECUÇÃO: " + formattedExecutionTime + " milisegundos");
     }
 
     public static void formatAndPrintArray(int[] array) { //FORMATAÇÃO DO ARRAY

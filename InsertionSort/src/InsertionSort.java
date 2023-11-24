@@ -4,13 +4,13 @@ public class InsertionSort {
     public static void main(String[] args) {
         Random random = new Random();
 
-        int[] vetor = new int[50000];
+        int[] vetor = new int[100000];
         int i, j, eleito, count;
 
         System.out.println("---------INSERTION SORT--------");
         System.out.println("Vetor desordenado:");
         for (count = 0; count < vetor.length; count++) {
-            vetor[count] = random.nextInt(100);
+            vetor[count] = random.nextInt(1000);
             System.out.print(vetor[count]);
 
             if (count < vetor.length - 1) {
@@ -45,7 +45,6 @@ public class InsertionSort {
         System.out.println();
 
         long executionTime = endTime - startTime;
-        double executionTimeInSeconds = executionTime / 1000.0; // Converter para segundos
-        System.out.println("TEMPO DE EXECUÇÃO: " + executionTimeInSeconds + " segundos");
+        System.out.println("TEMPO DE EXECUÇÃO: " + executionTime + " milisegundos");
     }
 }
